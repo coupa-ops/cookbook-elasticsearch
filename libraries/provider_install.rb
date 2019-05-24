@@ -177,12 +177,12 @@ class ElasticsearchCookbook::InstallProvider < Chef::Provider::LWRPBase
     # destroy the sample config directory for tarball installs, or it will
     # take precedence beyond the default stuff in /etc/elasticsearch and within
     # /etc/sysconfig or /etc/default
-    sample_r = directory "#{new_resource.dir}/elasticsearch/config" do
-      action :nothing
-      recursive true
-    end
-    sample_r.run_action(:delete)
-    new_resource.updated_by_last_action(true) if sample_r.updated_by_last_action?
+    #sample_r = directory "#{new_resource.dir}/elasticsearch/config" do
+    #  action :nothing
+    #  recursive true
+    #end
+    #sample_r.run_action(:delete)
+    #new_resource.updated_by_last_action(true) if sample_r.updated_by_last_action?
   end
 
   def remove_tarball_wrapper_action
